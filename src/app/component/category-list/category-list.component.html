@@ -1,0 +1,71 @@
+
+
+
+
+<body>
+  <div class="sidebar">
+      <h2>GEKI ADMIN MENU</h2>
+
+      <ul>
+        <li><a [routerLink]="['/admin']">Dashboard</a></li>
+        <hr>
+        <li><a [routerLink]="['/category-list']">Danh mục</a></li>
+        <hr>
+        <li><a [routerLink]="['/product-list']">Sản phẩm</a></li>
+        <hr>
+        <li><a [routerLink]="['/adminUser']">Người dùng</a></li>
+        <hr>
+        <li><a [routerLink]="['/adminDH']">Đơn hàng</a></li>
+        <hr>
+        <li><a [routerLink]="['/']">Trở về home</a></li>
+        <hr>
+    </ul>
+  </div>
+  <div class="content">
+      <h3>Danh sách Danh mục</h3>
+      <button id="addCategorieBtn"><a id="a-addCate" [routerLink]="['/category-add']" routerLinkActive="router-link-active">Thêm danh mục</a></button>
+
+
+
+      <div id="editCategoryFormContainer" style="display: none;">
+          <div class="editCategoryForm">
+              <h3>Chỉnh sửa danh mục</h3>
+              <form id="editCategoryForm">
+                  <input type="hidden" id="editCategoryId" name="editCategoryId">
+                  <label for="editCategoryName">Tên danh mục:</label><br>
+                  <input type="text" id="editCategoryName" name="editCategoryName"><br>
+
+                  <label for="editCategoryImage">Ảnh danh mục:</label><br>
+                  <div id="editCategoryImageContainer"></div> <!-- Container để hiển thị ảnh danh mục -->
+                  <input type="file" id="editCategoryImage" name="editCategoryImage"><br><br>
+
+                  <button name="editSubmit" type="button" id="saveEditCategoryButton" style="background-color: #007bff;">Lưu</button>
+                  <button type="button" id="cancelEditCategoryButton" style="background-color: red;">Hủy</button>
+              </form>
+          </div>
+      </div>
+
+      <table class="category-table">
+          <thead>
+              <tr>
+                  <th>ID DM</th>
+                  <th>Danh mục</th>
+                  <th>Thao tác</th>
+              </tr>
+          </thead>
+          <tbody id="load-categories">
+              <tr *ngFor="let category of categories">
+                  <td>{{ category.id }}</td>
+                  <!-- <td><img [src]="'http://localhost:3000/images/' + category.img" [alt]="category.name"></td> -->
+                  <td>{{ category.name }}</td>
+                  <td>
+                    <a class="editCateBtn" [routerLink]="['/category-edit', category.id]">Chỉnh sửa</a>
+                    <a class="removeCateBtn" (click)="deleteCategory(category.id)">Xóa</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <script type="module" src="js/adminCate.js"></script>
+</body>

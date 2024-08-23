@@ -1,0 +1,71 @@
+<body>
+  <div class="sidebar">
+      <h2>GEKI ADMIN MENU</h2>
+
+      <ul>
+        <li><a [routerLink]="['/admin']">Dashboard</a></li>
+        <hr>
+        <li><a [routerLink]="['/category-list']">Danh mục</a></li>
+        <hr>
+        <li><a [routerLink]="['/product-list']">Sản phẩm</a></li>
+        <hr>
+        <li><a [routerLink]="['/adminUser']">Người dùng</a></li>
+        <hr>
+        <li><a [routerLink]="['/adminDH']">Đơn hàng</a></li>
+        <hr>
+        <li><a [routerLink]="['/']">Trở về home</a></li>
+    </ul>
+  </div>
+  <div class="content">
+      <h3>Danh sách Sản phẩm</h3>
+      <button id="addProductBtn"><a id="a-addCate" [routerLink]="['/product-add']" routerLinkActive="router-link-active">Thêm sản phẩm</a></button>
+
+      <div id="editproductFormContainer" style="display: none;">
+          <div class="editproductForm">
+              <h3>Chỉnh sửa danh mục</h3>
+              <form id="editproductForm">
+                  <input type="hidden" id="editproductId" name="editproductId">
+                  <label for="editproductName">Tên danh mục:</label><br>
+                  <input type="text" id="editproductName" name="editproductName"><br>
+
+                  <label for="editproductImage">Ảnh danh mục:</label><br>
+                  <div id="editproductImageContainer"></div> <!-- Container để hiển thị ảnh danh mục -->
+                  <input type="file" id="editproductImage" name="editproductImage"><br><br>
+
+                  <button name="editSubmit" type="button" id="saveEditproductButton" style="background-color: #007bff;">Lưu</button>
+                  <button type="button" id="cancelEditproductButton" style="background-color: red;">Hủy</button>
+              </form>
+          </div>
+      </div>
+
+      <table class="product-table">
+          <thead>
+              <tr>
+                  <th>ID SP</th>
+                  <th>Ảnh sản phẩm</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Giá</th>
+                  <!-- <th class="cateId">ID danh mục</th> -->
+                  <th>Mô tả</th>
+                  <th>Thao tác</th>
+              </tr>
+          </thead>
+          <tbody id="load-categories">
+              <tr *ngFor="let product of products">
+                  <td>{{ product.id }}</td>
+                  <td><img [src]="'../../../assets/images/' + product.img" [alt]="product.name"></td>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.price }}</td>
+                  <!-- <td>{{ product.productId }}</td> -->
+                  <td>{{ product.description }}</td>
+                  <td class="button-width">
+                    <a class="editCateBtn" [routerLink]="['/product-edit', product.id]">Chỉnh sửa</a>
+                      <a class="removeCateBtn" (click)="deleteProduct(product.id)" >Xóa</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <script type="module" src="js/adminCate.js"></script>
+</body>

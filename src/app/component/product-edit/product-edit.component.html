@@ -1,0 +1,33 @@
+<div id="addProductForm">
+  <h3>Chỉnh sửa sản phẩm</h3>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-section">
+      <label for="productId">ID Sản phẩm:</label><br>
+      <input type="text" id="productId" formControlName="productId" readonly><br>
+
+      <label for="productName">Tên sản phẩm:</label><br>
+      <input type="text" id="productName" formControlName="productName"><br>
+
+      <label for="productImageUrl">Đường dẫn ảnh sản phẩm:</label><br>
+      <input type="text" id="productImageUrl" formControlName="productImageUrl"><br><br>
+
+      <label for="productPrice">Giá:</label><br>
+      <input type="text" id="productPrice" formControlName="productPrice"><br><br>
+    </div>
+
+    <div class="form-section">
+      <label for="productCateId">ID Danh mục:</label><br>
+      <select id="productCateId" formControlName="productCategoryId">
+       <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      </select><br><br>
+
+      <label for="productDescription">Mô tả:</label><br>
+      <textarea id="productDescription" formControlName="productDescription"></textarea><br><br>
+    </div>
+
+    <div class="form-buttons">
+      <button name="btnSubmit_Add" type="submit" id="addProductButton">Lưu</button>
+      <button type="button" id="cancelAddButton" (click)="onCancel()" style="background-color:red;">Hủy</button>
+    </div>
+  </form>
+</div>

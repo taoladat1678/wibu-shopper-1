@@ -1,0 +1,14 @@
+<div id="addCategoryForm">
+  <h3>Thêm danh mục mới</h3>
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <label for="categoryName">Tên danh mục:</label><br>
+      <input type="text" id="categoryName" formControlName="categoryName">
+      <div *ngIf="categoryForm.get('categoryName')?.invalid && categoryForm.get('categoryName')?.touched" class="text-danger">
+          <div *ngIf="categoryForm.get('categoryName')?.hasError('required')">Tên danh mục là bắt buộc</div>
+          <div *ngIf="categoryForm.get('categoryName')?.hasError('minlength')">Tên danh mục phải có ít nhất 6 ký tự</div>
+      </div><br>
+
+      <button type="submit" [disabled]="categoryForm.invalid" name="submit_addCate">Thêm danh mục</button>
+      <button id="closeAddCate" type="button" style="background-color:red">Hủy</button>
+  </form>
+</div>

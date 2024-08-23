@@ -1,0 +1,740 @@
+  /* General CSS */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Sidebar CSS */
+  .sidebar {
+    background-image: url('../../../assets/images/galaxy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+
+  .sidebar h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .sidebar ul li:hover {
+    background-color: #555;
+    cursor: pointer;
+  }
+
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .content {
+    width: calc(100% - 400px);
+    height: 100vh;
+    margin-left: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .content h4 {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  /* Admin choice CSS */
+  .admin-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .admin-choice {
+    background-color: rgba(184, 178, 178, 0.7);
+    border-radius: 10%;
+    text-align: center;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .admin-choice:hover {
+    opacity: 0.5;
+  }
+
+  .admin-choice img {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .admin-choice h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: rgb(23, 23, 22);
+  }
+
+  /* Add Product Form CSS */
+  #addProductForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    z-index: 9999;
+  }
+
+  #addProductForm h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #addProductForm input[type="text"],
+  #addProductForm input[type="file"],
+  #addProductForm input[type="number"],
+  #addProductForm textarea,
+  #addProductForm input[type="submit"],
+  #addProductForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #addProductForm input[type="submit"],
+  #addProductForm button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  #addProductForm input[type="submit"]:hover,
+  #addProductForm button:hover {
+    background-color: #102439 !important;
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .form-buttons button {
+    width: auto;
+  }
+
+  /* Edit Product Form CSS */
+  #editProductFormContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  .editProductForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .editProductForm h3 {
+    text-align: center;
+  }
+
+  .editProductForm label {
+    font-weight: bold;
+  }
+
+  .editProductForm input[type="text"],
+  .editProductForm input[type="file"],
+  .editProductForm input[type="number"],
+  .editProductForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .editProductForm button {
+    display: inline-block;
+    width: 49%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .editProductForm button:hover {
+    background-color: #315a85 !important;
+  }
+
+  .editProductForm button:nth-child(2) {
+    margin-left: 2%;
+    background-color: red;
+    color: white;
+  }
+
+  .editProductForm button:nth-child(2):hover {
+    background-color: #f44336;
+  }
+
+  #addProductBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  #addProductBtn:hover {
+    background-color: #0c345f;
+  }
+
+  /* Product Table CSS */
+  .product-table {
+    width: 105%;
+    border-collapse: collapse;
+  }
+
+  .product-table th, .product-table td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+  .product-table th {
+    background-color: #f2f2f2;
+  }
+
+  .product-table td img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .product-table button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .product-table button:hover {
+    background-color: #133150;
+  }
+
+  /* Edit Category Form CSS */
+  #editCategoryFormContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  .editCategoryForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .editCategoryForm h3 {
+    text-align: center;
+  }
+
+  .editCategoryForm label {
+    font-weight: bold;
+  }
+
+  .editCategoryForm input[type="text"],
+  .editCategoryForm input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .editCategoryForm button {
+    display: inline-block;
+    width: 49%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .editCategoryForm button:hover {
+    background-color: #315a85 !important;
+  }
+
+  .editCategoryForm button:nth-child(2) {
+    margin-left: 2%;
+    background-color: red;
+    color: white;
+  }
+
+  .editCategoryForm button:nth-child(2):hover {
+    background-color: #f44336;
+  }
+
+  /* Add Category Form CSS */
+  #addCategoryForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  #addCategoryForm h3 {
+    margin-bottom: 10px;
+  }
+
+  #addCategoryForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #addCategoryForm input[type="text"],
+  #addCategoryForm input[type="file"],
+  #addCategoryForm input[type="submit"],
+  #addCategoryForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #addCategoryForm input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  #addCategoryForm button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  #addCategoryForm input[type="submit"]:hover,
+  #addCategoryForm button:hover {
+    background-color: #102439;
+  }
+
+  /* Category Table CSS */
+  .category-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .category-table th, .category-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .category-table th {
+    background-color: #f2f2f2;
+  }
+
+  .category-table td img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .category-table button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .category-table button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Add User Form CSS */
+  #addUserForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    z-index: 9999;
+  }
+
+  #addUserForm h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #addUserForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #addUserForm input[type="email"],
+  #addUserForm input[type="password"],
+  #addUserForm input[type="text"],
+  #addUserForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #addUserForm button[type="submit"],
+  #addUserForm button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  #addUserForm button[type="button"] {
+    background-color: red;
+    color: white;
+  }
+
+  #addUserForm button[type="submit"]:hover,
+  #addUserForm button[type="button"]:hover {
+    background-color: #102439 !important;
+  }
+
+  /* Search Container CSS */
+  #searchContainer {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  #searchInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+  }
+
+  #searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #searchButton:hover {
+    background-color: #0056b3;
+  }
+
+  /* Users Table CSS */
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .users-table th, .users-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .users-table th {
+    background-color: #f2f2f2;
+  }
+
+  .users-table td img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .users-table button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .users-table button:hover {
+    background-color: #133150;
+  }
+
+  /* Orders Table CSS */
+  .dh-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .dh-table th, .dh-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dh-table th {
+    background-color: #f2f2f2;
+  }
+
+  .dh-table td img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .dh-table button,
+  .dh-table .btnDetail {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dh-table button:hover {
+    background-color: #133150;
+  }
+
+  .product-details {
+    display: none;
+  }
+
+  /* Role Filter CSS */
+  #roleFilter {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  /* Buttons CSS */
+  .editCateBtn, .removeCateBtn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .editCateBtn:hover, .removeCateBtn:hover {
+    background-color: #102439;
+  }
+
+  #a-addCate {
+    color: #fff;
+  }
+
+  #a-addCate:hover {
+    text-decoration: none;
+  }
+
+  #addCategorieBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  #addCategorieBtn:hover {
+    background-color: #0056b3;
+  }
+
+  #addProductBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  #addProductBtn:hover {
+    background-color: #0c345f;
+  }
+
+
+  /* CSS cho form thêm sản phẩm */
+  #addProductForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    z-index: 9999;
+    width: 300px; /* Chỉnh kích thước của form */
+  }
+
+  #addProductForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    z-index: 9999;
+    width: 600px; /* Tăng chiều rộng form để chứa 2 cột */
+  }
+
+  #addProductForm h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px; /* Chỉnh kích thước font chữ */
+  }
+
+  #addProductForm input[type="text"],
+  #addProductForm input[type="file"],
+  #addProductForm textarea {
+    width: 100%;
+    padding: 8px; /* Chỉnh padding để form gọn hơn */
+    margin-bottom: 8px; /* Chỉnh margin để form gọn hơn */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px; /* Chỉnh kích thước font chữ */
+  }
+
+  #addProductForm button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  #addProductForm button:hover {
+    background-color: #102439 !important;
+  }
+
+  #cancelAddButton {
+    background-color: red;
+  }
+
+  #cancelAddButton:hover {
+    background-color: #d32f2f;
+  }
+
+  /* CSS cho việc chia đôi form */
+  .form-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%; /* Mỗi cột chiếm 48% chiều rộng form */
+    box-sizing: border-box;
+  }
+
+  .form-section:nth-child(2) {
+    margin-left: 4%; /* Khoảng cách giữa 2 cột */
+  }
+
+  /* CSS cho các nút bên phải */
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end; /* Đẩy các nút sang phải */
+    gap: 10px; /* Khoảng cách giữa các nút */
+  }
+
+  .form-buttons button {
+    width: auto; /* Đặt chiều rộng của các nút */
+  }
+
+
+  .form-section #productCateId {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+

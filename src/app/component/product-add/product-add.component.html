@@ -1,0 +1,46 @@
+<div id="addProductForm">
+  <h3>Thêm sản phẩm mới</h3>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-section">
+      <label for="productName">Tên sản phẩm:</label><br>
+      <input type="text" id="productName" formControlName="productName"><br>
+      <div *ngIf="productForm.get('productName')?.invalid && (productForm.get('productName')?.touched || productForm.get('productName')?.dirty)">
+        <small *ngIf="productForm.get('productName')?.errors?.['required']">Tên sản phẩm là bắt buộc.</small>
+        <small *ngIf="productForm.get('productName')?.errors?.['minlength']">Tên sản phẩm phải có ít nhất 6 ký tự.</small>
+      </div>
+
+      <label for="productImageUrl">Đường dẫn ảnh sản phẩm:</label><br>
+      <input type="text" id="productImageUrl" formControlName="productImageUrl"><br><br>
+      <div *ngIf="productForm.get('productImageUrl')?.invalid && (productForm.get('productImageUrl')?.touched || productForm.get('productImageUrl')?.dirty)">
+        <small *ngIf="productForm.get('productImageUrl')?.errors?.['required']">Đường dẫn ảnh là bắt buộc.</small>
+      </div>
+
+      <label for="productPrice">Giá:</label><br>
+      <input type="text" id="productPrice" formControlName="productPrice"><br><br>
+      <div *ngIf="productForm.get('productPrice')?.invalid && (productForm.get('productPrice')?.touched || productForm.get('productPrice')?.dirty)">
+        <small *ngIf="productForm.get('productPrice')?.errors?.['required']">Giá là bắt buộc.</small>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label for="productCateId">ID Danh mục:</label><br>
+      <select id="productCateId" formControlName="productCategoryId">
+       <option *ngFor="let categories of category" [value]="categories.id">{{categories.name}}</option>
+      </select><br><br>
+      <div *ngIf="productForm.get('productCategoryId')?.invalid && (productForm.get('productCategoryId')?.touched || productForm.get('productCategoryId')?.dirty)">
+        <small *ngIf="productForm.get('productCategoryId')?.errors?.['required']">ID Danh mục là bắt buộc.</small>
+      </div>
+
+      <label for="productDescription">Mô tả:</label><br>
+      <textarea id="productDescription" formControlName="productDescription"></textarea><br><br>
+      <div *ngIf="productForm.get('productDescription')?.invalid && (productForm.get('productDescription')?.touched || productForm.get('productDescription')?.dirty)">
+        <small *ngIf="productForm.get('productDescription')?.errors?.['required']">Mô tả là bắt buộc.</small>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <button name="btnSubmit_Add" type="submit" id="addProductButton">Thêm sản phẩm</button>
+      <button type="button" id="cancelAddButton" (click)="onCancel()" style="background-color:red;">Hủy</button>
+    </div>
+  </form>
+</div>

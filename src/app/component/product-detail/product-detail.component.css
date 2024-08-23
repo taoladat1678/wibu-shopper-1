@@ -1,0 +1,752 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.sidebar {
+  background-image: url('../../../assets/images/faker.jpg');
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-size: cover;
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+}
+
+.sidebar h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 20px;
+}
+
+.sidebar ul li  {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar ul li:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.content {
+  width: calc(100% - 400px); /* chiếm phần còn lại sau khi bỏ qua chiều rộng của thanh bên */
+  height: 100vh; /* chiếm toàn bộ chiều cao của cửa sổ trình duyệt */
+  margin-left: 350px; /* bỏ qua chiều rộng của thanh bên */
+  padding: 20px;
+  box-sizing: border-box; /* tính cả padding và border trong chiều rộng và chiều cao */
+  margin-left: 400px;
+}
+
+.content h4{
+  text-align: center;
+  font-size: 50px;
+}
+/* CSS cho admin-choice */
+/* CSS cho admin-choice */
+.admin-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Số cột là 4 và đều chiếm phần bằng nhau */
+  gap: 50px; /* Khoảng cách giữa các phần tử */
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.admin-choice {
+  background-color: rgba(184, 178, 178, 0.7); /* Màu trắng mờ có độ trong suốt */
+  border-radius: 10%;
+  text-align: center;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  position: relative;
+ text-decoration: none;
+
+
+}
+
+
+
+.admin-choice:hover {
+  opacity: 0.5; /* Làm mờ đi div khi hover vào */
+}
+
+
+
+
+.admin-choice img {
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+
+}
+
+.admin-choice h3 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: rgb(23, 23, 22); /* Màu chữ */
+}
+
+/* CSS để xóa kiểu gạch ngang giữa các mục trong menu */
+.sidebar ul li {
+  padding: 10px;
+  border: none;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CSS product */
+
+#addProductForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  z-index: 9999;
+}
+
+#addProductForm h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#addProductForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#addProductForm input[type="text"],
+#addProductForm input[type="file"],
+#addProductForm input[type="number"],
+#addProductForm textarea,
+#addProductForm input[type="submit"],
+#addProductForm button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#addProductForm input[type="submit"],
+#addProductForm button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#addProductForm input[type="submit"]:hover,
+#addProductForm button:hover {
+  background-color: #102439 !important;
+}
+
+#editProductFormContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.editProductForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.editProductForm h3 {
+  text-align: center;
+}
+
+.editProductForm label {
+  font-weight: bold;
+}
+
+.editProductForm input[type="text"],
+.editProductForm input[type="file"],
+.editProductForm input[type="number"],
+.editProductForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.editProductForm button {
+  display: inline-block;
+  width: 49%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editProductForm button:hover {
+  background-color: #315a85 !important;
+}
+
+.editProductForm button:nth-child(2) {
+  margin-left: 2%;
+  background-color: red;
+  color: white;
+}
+
+.editProductForm button:nth-child(2):hover {
+  background-color: #f44336;
+}
+
+#addProductBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#addProductBtn:hover {
+  background-color: #0c345f;
+}
+
+#a-addCate{
+  color: #fff;
+}
+#a-addCate:hover{
+  text-decoration: none;
+}
+
+.product-table {
+  width: 105%;
+  border-collapse: collapse;
+}
+
+
+
+
+.product-table th, .product-table td {
+  /* padding: 10px; */
+  /* text-align: left; */
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+.product-table td img {
+  width: 150px;
+  height: 150px;
+}
+
+.product-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-table button:hover {
+  background-color: #133150;
+}
+
+/* CSS danh mục */
+
+#editCategoryFormContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); Màu nền mờ */
+  z-index: 9999; /* Đảm bảo form nằm trên các phần tử khác */
+}
+
+
+.editCategoryForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.editCategoryForm h3 {
+  text-align: center;
+}
+
+.editCategoryForm label {
+  font-weight: bold;
+}
+
+.editCategoryForm input[type="text"],
+.editCategoryForm input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.editCategoryForm button {
+  display: inline-block;
+  width: 49%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editCategoryForm button:hover {
+  background-color: #315a85 !important;
+}
+
+.editCategoryForm button:nth-child(2) {
+  margin-left: 2%;
+  background-color: red;
+  color: white;
+}
+
+
+
+.editCategoryForm button:nth-child(2):hover {
+  background-color: #f44336;
+}
+
+/* CSS cho form thêm danh mục */
+#addCategoryForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#addCategoryForm h3 {
+  margin-bottom: 10px;
+}
+
+#addCategoryForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#addCategoryForm input[type="text"],
+#addCategoryForm input[type="file"],
+#addCategoryForm input[type="submit"],
+#addCategoryForm button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#addCategoryForm input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#addCategoryForm button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#addCategoryForm input[type="submit"]:hover,
+#addCategoryForm button:hover {
+  background-color: #102439;
+}
+
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.category-table th, .category-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-table th {
+  background-color: #f2f2f2;
+}
+
+.category-table td img {
+  width: 150px;
+  height: 150px;
+}
+
+.category-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-table button:hover {
+  background-color: #0056b3;
+}
+
+#addProductBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#addProductBtn:hover {
+  background-color: #0c345f;
+}
+
+#addCategorieBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+
+#addCategorieBtn:hover {
+  background-color: #0056b3;
+}
+
+/* CSS user */
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th, .users-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.users-table th {
+  background-color: #f2f2f2;
+}
+
+.users-table td img {
+  width: 150px;
+  height: 150px;
+}
+
+.users-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.users-table button:hover {
+  background-color: #133150;
+}
+
+/* CSS dh */
+
+.dh-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dh-table th, .dh-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.dh-table th {
+  background-color: #f2f2f2;
+}
+
+.dh-table td img {
+  width: 150px;
+  height: 150px;
+}
+
+.dh-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dh-table .btnDetail {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dh-table button:hover {
+  background-color: #133150;
+}
+
+.product-details {
+  display: none;
+}
+/* CSS for detail rows */
+
+
+
+/* Responsive layout - make the sidebar and content appear below each other on small screens */
+
+#roleFilter {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* CSS cho addUserForm */
+#addUserForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  z-index: 9999;
+}
+
+#addUserForm h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#addUserForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#addUserForm input[type="email"],
+#addUserForm input[type="password"],
+#addUserForm input[type="text"],
+#addUserForm select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* CSS cho các nút trong form */
+#addUserForm button[type="submit"],
+#addUserForm button[type="button"] {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Khoảng cách giữa các nút */
+}
+
+#addUserForm button[type="button"] {
+  background-color: red;
+  color: white;
+}
+
+#addUserForm button[type="submit"]:hover,
+#addUserForm button[type="button"]:hover {
+  background-color: #102439 !important;
+}
+
+
+#searchContainer {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+}
+
+#searchButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+  background-color: #0056b3;
+}
+
+
+.editCateBtn{
+  padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.removeCateBtn{
+  padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-table {
+  width: 130%;
+
+}
+
+.product-table th,
+.product-table td {
+  padding: 30px; /* Tạo khoảng cách bên trong các ô */
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+.product-table td img {
+  width: 150px;
+  height: 150px;
+}
+
+.product-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-table button:hover {
+  background-color: #133150;
+}
+
+.product-table td .editCateBtn,
+.product-table td .removeCateBtn {
+  padding: 5px 10px;
+  margin: 3px 3px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.editCateBtn{
+  padding: 5px 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50px;
+}
+
+
+.removeCateBtn{
+  padding: 5px 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-width{
+  width: 350px;
+}
+
+#detail-img img{
+  height: 600px;
+  width: 600px;
+}
+
+
+
+
+

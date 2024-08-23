@@ -1,0 +1,68 @@
+<style>
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .error {
+    color: red;
+    margin-bottom: 15px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #D19C97;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #bb9b98;
+  }
+</style>
+
+<div class="container">
+  <h2>Form Đăng Ký</h2>
+  <form [formGroup]="registerF" (ngSubmit)="onRegister()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" placeholder="Vd: example@gmail.com" required>
+    <div *ngIf="registerF.get('email')?.invalid && registerF.get('email')?.touched" class="error">
+      Vui lòng nhập email hợp lệ.
+    </div>
+
+    <label for="fullname">Họ và tên:</label>
+    <input type="text" id="fullname" formControlName="fullname" placeholder="Vd: Nguyễn Văn A" required>
+    <div *ngIf="registerF.get('fullname')?.invalid && registerF.get('fullname')?.touched" class="error">
+      <div *ngIf="registerF.get('fullname')?.errors?.['required']">Họ và tên là bắt buộc.</div>
+      <div *ngIf="registerF.get('fullname')?.errors?.['minlength']">Họ và tên phải có ít nhất 6 ký tự.</div>
+      <div *ngIf="registerF.get('fullname')?.errors?.['forbiddenWords']">Họ và tên chứa từ cấm.</div>
+    </div>
+
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" formControlName="password" placeholder="Nhập mật khẩu" required>
+    <div *ngIf="registerF.get('password')?.invalid && registerF.get('password')?.touched" class="error">
+      Vui lòng nhập mật khẩu.
+    </div>
+
+    <label for="repassword">Nhập lại mật khẩu:</label>
+    <input type="password" id="repassword" formControlName="repassword" placeholder="Nhập lại mật khẩu" required>
+    <div *ngIf="registerF.errors?.['mismatch'] && registerF.get('repassword')?.touched" class="error">
+      Mật khẩu không khớp.
+    </div>
+
+    <button type="submit">Đăng ký</button>
+  </form>
+</div>
